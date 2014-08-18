@@ -10,7 +10,11 @@ permissions:
  xsudo.*:
   children:
    xsudo.console:
-    description: Allows you to run commands as console.
+    description: "Allows you to run commands as console."
+   xsudo.help:
+    description: "Allows you to see usage of the plugin."
+   xsudo.info:
+    description: "Allows you to see info of the plugin."
    xsudo.user:
-    description: Allows you to run commands as other users.
+    description: "Allows you to run commands as other users."
   
