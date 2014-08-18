@@ -34,7 +34,7 @@ class xSudoCommand extends Command implements PluginIdentifiableCommand
 	
 	public function execute(CommandSender $sender, $label, array $args)
 	{
-		if(!isset($args[0]) || count($args) > 2)
+		if(!isset($args[0]))
 		{
 			if(!$this->checkPermission($sender, "xsudo.help")) break;
 			
@@ -59,8 +59,10 @@ class xSudoCommand extends Command implements PluginIdentifiableCommand
 				$console = new ConsoleCommandSender();
 				
 				$command = substr(strtolower($args[1]), 0, 1) == "/" ? substr(strtolower($args[1]), 1) : strtolower($args[1]);
+				
+				$arguments = array_diff($args, [$args[0], $args[1]]);
 			
-				$this->plugin->getServer()->dispatchCommand($console, $command);
+				$this->plugin->getServer()->dispatchCommand($console, $command . " " . implode(" ", $arguments));
 			
 				break;
 				
@@ -94,7 +96,9 @@ class xSudoCommand extends Command implements PluginIdentifiableCommand
 					return false;
 				}
 				
-				$this->plugin->getServer()->dispatchCommand($player, $command);
+				$arguments = array_diff($args, [$args[0], $args[1]]);
+				
+				$this->plugin->getServer()->dispatchCommand($player, $command . " " . implode(" ", $arguments));
 				
 				break;
 		}

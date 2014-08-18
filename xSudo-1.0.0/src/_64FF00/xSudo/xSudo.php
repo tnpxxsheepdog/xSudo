@@ -19,4 +19,8 @@ class xSudo extends PluginBase
 			)
 		);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master
