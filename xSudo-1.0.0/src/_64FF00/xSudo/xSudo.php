@@ -19,8 +19,4 @@ class xSudo extends PluginBase
 			)
 		);
 	}
-	
-	public function onDisable()
-	{
-	}
 }
