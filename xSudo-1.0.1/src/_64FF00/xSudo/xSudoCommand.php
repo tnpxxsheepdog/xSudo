@@ -36,7 +36,7 @@ class xSudoCommand extends Command implements PluginIdentifiableCommand
 	{
 		if(!isset($args[0]))
 		{
-			if(!$this->checkPermission($sender, "xsudo.help")) break;
+			if(!$this->checkPermission($sender, "xsudo.help")) return true;
 			
 			$sender->sendMessage(TextFormat::GREEN . "[xSudo] Usage: /xsudo <console / info / username> <COMMAND>");
 
